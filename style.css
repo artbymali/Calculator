@@ -1,0 +1,114 @@
+.text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+h1{
+    font-family: sans-serif;
+    font-size: 25px;
+    line-height: 3rem;
+    text-align: center;
+}
+
+.Calculator-grid{
+    display: none;
+}
+
+
+@media (max-width: 500px) {
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+        font-weight: 500;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: white;
+    }
+
+    h1{
+        display: none;
+    }
+
+    .Calculator-grid {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        gap: 1rem;
+        grid-template-columns: repeat(4, 70px);
+        grid-template-rows: minmax(120px, auto) repeat(5, 70px);
+    }
+
+    .Calculator-grid > button {
+        border: none;
+        border-radius: 30px;
+        font-size: 28px;
+    }
+
+    .Calculator-grid > .data-special {
+        background: #ECFAFF;
+        color: #079ED3;
+    }
+
+    .Calculator-grid > .data-special:active {
+        background: #e1f3fa;
+        color: #0996c9;;
+    }
+
+    .Calculator-grid > #data-number {
+        background: #F0F0F0;
+        color: #4B4B4B;
+    }
+
+    .Calculator-grid > #data-number:active {
+        background: #e6e6e6;
+        color: #414141;
+    }
+
+    .Calculator-grid > .data-seprate {
+        background: #FFDCE6;
+        color: #FF195B;
+    }
+
+    .Calculator-grid > .data-seprate:active {
+        background: #fcd0dd;
+        color: #f71253;
+    }
+
+    .Calculator-grid > .span-two {
+        grid-column: span 2;
+    }
+
+
+    .output {
+        grid-column: 1 / -1;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-around;
+        flex-direction: column;
+        word-wrap: break-word;
+        word-break: break-all;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .output #previous-operand {
+        color: #4A4A4A;
+        font-size: 1.25rem;
+    }
+
+    .output #current-operand { 
+        color: #3f3f3f;
+        font-size: 2.5rem;
+    }
+}
